@@ -30,7 +30,12 @@ const deleteChip = (e) => {
 input.addEventListener('keyup', (e) => {
     if (e.code === "Space" || e.code === "Enter") {
         addChip()
-    } else if (e.code === "Backspace") {
+    }
+})
+
+// backspace key event listener
+input.addEventListener('keydown', (e) => {
+    if (e.code === "Backspace" && input.value.length === 0) {
         deleteChip("delete")
     }
 })
