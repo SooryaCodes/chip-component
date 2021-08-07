@@ -19,12 +19,18 @@ const addChip = () => {
 
 //delete chip
 const deleteChip = (e) => {
-    e.target.parentNode.remove()
+    if (e === "delete") {
+        chipCont.lastElementChild.remove()
+    } else {
+        e.target.parentNode.remove()
+    }
 }
 
 // space key event listener
 input.addEventListener('keyup', (e) => {
     if (e.code === "Space" || e.code === "Enter") {
         addChip()
+    } else if (e.code === "Backspace") {
+        deleteChip("delete")
     }
 })
