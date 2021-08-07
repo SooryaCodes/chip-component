@@ -24,7 +24,7 @@ const deleteChip = (e) => {
 
 // space key event listener
 input.addEventListener('keyup', (e) => {
-    if (e.code === "Space") {
+    if (e.code === "Space" || e.code === "Enter") {
         addChip()
     }
 })
